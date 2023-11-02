@@ -1,0 +1,15 @@
+number = int(input("Введите колличество дисков: "))
+
+
+def moveTower(height: object, fromPole: object, toPole: object, withPole: object) -> object:
+    if height >= 1:
+        moveTower(height - 1, fromPole, withPole, toPole)
+        moveDisk(fromPole, toPole)
+        moveTower(height - 1, withPole, toPole, fromPole)
+
+
+def moveDisk(fp, tp):
+    print("Переместите диск с", fp, "на", tp)
+
+
+moveTower(number, "A", "C", "B")
